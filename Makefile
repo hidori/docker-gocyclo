@@ -12,10 +12,6 @@ rebuild:
 rmi:
 	docker rmi -f ${IMAGE_NAME}
 
-.PHONY: pull
-pull: rmi
-	docker pull ${IMAGE_NAME}
-
 .PHONY: run
 run:
 	docker run --rm -w $$PWD -v $$PWD:$$PWD hidori/gocyclo -top 30 .
