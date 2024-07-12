@@ -1,4 +1,4 @@
-FROM node:20-alpine3.19
+FROM golang:1.22-alpine3.20
 
 RUN apk update \
     && apk add --no-cache \
@@ -7,6 +7,6 @@ RUN apk update \
 
 ENV CGO_ENABLED=0
 
-RUN go install github.com/fzipp/gocyclo/cmd/gocyclo@latest
+RUN go install github.com/fzipp/gocyclo/cmd/gocyclo@v0.6.0
 
 ENTRYPOINT [ "gocyclo" ]

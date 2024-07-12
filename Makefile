@@ -2,11 +2,11 @@ IMAGE_NAME = hidori/gocyclo
 
 .PHONY: build
 build:
-	docker build -f ./Dockerfile -t ${IMAGE_NAME}:latest .
+	docker build -f ./Dockerfile -t ${IMAGE_NAME} .
 
 .PHONY: rebuild
 rebuild:
-	docker build -f ./Dockerfile -t ${IMAGE_NAME}:latest --no-cache .
+	docker build -f ./Dockerfile -t ${IMAGE_NAME} --no-cache .
 
 .PHONY: rmi
 rmi:
