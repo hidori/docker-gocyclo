@@ -1,4 +1,4 @@
-module github.com/hidori/gocyclo
+module github.com/hidori/docker-gocyclo
 
 go 1.18
 
