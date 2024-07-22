@@ -14,7 +14,7 @@ rmi:
 
 .PHONY: run
 run:
-	docker run --rm -w $$PWD -v $$PWD:$$PWD hidori/gocyclo -top 30 .
+	docker run --rm -w $$PWD -v $$PWD:$$PWD ${IMAGE_NAME} -top 30 .
 
 .PHONY: tag
 tag: build
