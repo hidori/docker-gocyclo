@@ -16,8 +16,8 @@ rmi:
 run:
 	docker run --rm -w $$PWD -v $$PWD:$$PWD ${IMAGE_NAME} -top 30 .
 
-.PHONY: tag
-tag: build
+.PHONY: version
+version: build
 	git checkout main
 	git fetch
 	git pull
