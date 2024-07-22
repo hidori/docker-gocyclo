@@ -7,7 +7,7 @@ This container image contains following components:
 ## USAGE
 
 ```bash
-docker pull hidori/gocyclo
+docker pull hidori/gocyclo:latest
 ```
 
 ## EXAMPLE
