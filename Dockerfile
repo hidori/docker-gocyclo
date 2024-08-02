@@ -1,4 +1,4 @@
-FROM golang:1.22-alpine3.20
+FROM golang:1.22-alpine3.20 AS builder
 
 RUN apk update \
     && apk add --no-cache \
@@ -7,6 +7,11 @@ RUN apk update \
 
 ENV CGO_ENABLED=0
 
-RUN go install github.com/fzipp/gocyclo/cmd/gocyclo@latest
+RUN go install github.com/fzipp/gocyclo/cmd/gocyclo@latest \
+    && cp `which gocyclo` /gocyclo
+
+FROM alpine:3.20 AS runner
+
+COPY --from=builder /gocyclo /usr/local/bin
 
 ENTRYPOINT [ "gocyclo" ]
