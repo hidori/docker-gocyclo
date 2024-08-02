@@ -7,6 +7,6 @@ RUN apk update \
 
 ENV CGO_ENABLED=0
 
-RUN go install github.com/fzipp/gocyclo/cmd/gocyclo@v0.6.0
+RUN go install github.com/fzipp/gocyclo/cmd/gocyclo@latest
 
 ENTRYPOINT [ "gocyclo" ]
