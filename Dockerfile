@@ -10,7 +10,7 @@ ENV CGO_ENABLED=0
 RUN go install github.com/fzipp/gocyclo/cmd/gocyclo@latest \
     && cp `which gocyclo` /gocyclo
 
-FROM alpine:3.20 AS runner
+FROM alpine:3.21 AS runner
 
 COPY --from=builder /gocyclo /usr/local/bin
 
